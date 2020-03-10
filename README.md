@@ -1,0 +1,2 @@
+# AmazingScore
+Code challenge
