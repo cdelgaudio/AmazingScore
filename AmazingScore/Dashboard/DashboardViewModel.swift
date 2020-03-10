@@ -10,7 +10,20 @@ import Foundation
 
 final class DashboardViewModel {
   
+  private let network: Networking
+  
+  init(network: Networking) {
+    self.network = network
+  }
+  
   func start() {
-    
+    network.getAccount { result in
+      switch result {
+      case .success(let response):
+        print(response)
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
 }

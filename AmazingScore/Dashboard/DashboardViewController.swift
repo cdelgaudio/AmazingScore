@@ -32,6 +32,8 @@ final class DashboardViewController: UIViewController {
     
     title = "Dashboard"
     view.backgroundColor = .white
+    
+    viewModel.start()
   }
   
 }

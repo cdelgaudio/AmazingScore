@@ -18,7 +18,7 @@ final class DashboardCoordinator: Coordinator {
   }
   
   func start() {
-    let viewModel = DashboardViewModel()
+    let viewModel = DashboardViewModel(network: NetworkManager.shared)
     let controller = DashboardViewController(viewModel: viewModel)
     
     navigation.pushViewController(controller, animated: true)
