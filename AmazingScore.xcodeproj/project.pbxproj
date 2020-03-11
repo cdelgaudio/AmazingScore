@@ -14,12 +14,13 @@
 		DB4BE8AE241813E500FCB26F /* AnimatedCounterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AD241813E500FCB26F /* AnimatedCounterLabel.swift */; };
 		DB4BE8B02418FBB400FCB26F /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */; };
 		DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */; };
+		DB4BE8B52419086E00FCB26F /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8B42419086E00FCB26F /* MockNetwork.swift */; };
 		DBE364502417B75700F02B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3644F2417B75700F02B1A /* AppDelegate.swift */; };
 		DBE364522417B75700F02B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364512417B75700F02B1A /* SceneDelegate.swift */; };
 		DBE364542417B75700F02B1A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364532417B75700F02B1A /* DashboardViewController.swift */; };
 		DBE364592417B75D00F02B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE364582417B75D00F02B1A /* Assets.xcassets */; };
 		DBE3645C2417B75D00F02B1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE3645A2417B75D00F02B1A /* LaunchScreen.storyboard */; };
-		DBE364672417B75E00F02B1A /* AmazingScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364662417B75E00F02B1A /* AmazingScoreTests.swift */; };
+		DBE364672417B75E00F02B1A /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364662417B75E00F02B1A /* DashboardTests.swift */; };
 		DBE364722417B75E00F02B1A /* AmazingScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364712417B75E00F02B1A /* AmazingScoreUITests.swift */; };
 		DBE364812417C1BA00F02B1A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364802417C1BA00F02B1A /* Coordinator.swift */; };
 		DBE364852417C7D600F02B1A /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364842417C7D600F02B1A /* DashboardCoordinator.swift */; };
@@ -54,6 +55,7 @@
 		DB4BE8AD241813E500FCB26F /* AnimatedCounterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCounterLabel.swift; sourceTree = "<group>"; };
 		DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		DB4BE8B42419086E00FCB26F /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		DBE3644C2417B75700F02B1A /* AmazingScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE3644F2417B75700F02B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE364512417B75700F02B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +64,7 @@
 		DBE3645B2417B75D00F02B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBE3645D2417B75D00F02B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBE364622417B75E00F02B1A /* AmazingScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmazingScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBE364662417B75E00F02B1A /* AmazingScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmazingScoreTests.swift; sourceTree = "<group>"; };
+		DBE364662417B75E00F02B1A /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
 		DBE364682417B75E00F02B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBE3646D2417B75E00F02B1A /* AmazingScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmazingScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE364712417B75E00F02B1A /* AmazingScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmazingScoreUITests.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DB4BE8B32419085E00FCB26F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				DB4BE8B42419086E00FCB26F /* MockNetwork.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		DBE364432417B75700F02B1A = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +164,7 @@
 		DBE364652417B75E00F02B1A /* AmazingScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				DBE364662417B75E00F02B1A /* AmazingScoreTests.swift */,
+				DBE364662417B75E00F02B1A /* DashboardTests.swift */,
 				DBE364682417B75E00F02B1A /* Info.plist */,
 			);
 			path = AmazingScoreTests;
@@ -205,6 +215,7 @@
 		DBE3648D2417DC0900F02B1A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DB4BE8B32419085E00FCB26F /* Mock */,
 				DBE364922417E07700F02B1A /* Responses */,
 				DBE3648E2417DC5100F02B1A /* NetworkManager.swift */,
 				DB3B49CC2417EBE200A0D2DD /* NetworkRequest.swift */,
@@ -350,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4BE8B52419086E00FCB26F /* MockNetwork.swift in Sources */,
 				DBE364812417C1BA00F02B1A /* Coordinator.swift in Sources */,
 				DB4BE8AC241802E000FCB26F /* CrediScoreView.swift in Sources */,
 				DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */,
@@ -373,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBE364672417B75E00F02B1A /* AmazingScoreTests.swift in Sources */,
+				DBE364672417B75E00F02B1A /* DashboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

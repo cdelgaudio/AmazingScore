@@ -37,6 +37,16 @@ final class CreditScoreView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
+    setupView()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  // MARK: SetupView
+  
+  private func setupView() {
     scoreLabel.font = .helveticaNeueUltraLight
     scoreLabel.size(100)
     scoreLabel.textColor = color
@@ -52,10 +62,14 @@ final class CreditScoreView: UIView {
     
     addSubview(stack)
     stack.autoCenterToSuperview()
+    
+    setupIdentifiers()
   }
   
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+  private func setupIdentifiers() {
+    titleLabel.accessibilityIdentifier = "creditScoreTitle"
+    subtitleLabel.accessibilityIdentifier = "creditScoreSubtitle"
+    scoreLabel.accessibilityIdentifier = "creditScoreValue"
   }
   
   // MARK: Methods

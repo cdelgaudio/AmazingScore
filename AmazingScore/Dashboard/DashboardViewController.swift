@@ -36,6 +36,7 @@ final class DashboardViewController: UIViewController {
     
     setupView()
     setupBindings()
+    viewModel.start()
   }
   
   // MARK: ViewSetup
@@ -51,7 +52,7 @@ final class DashboardViewController: UIViewController {
   }
   
   // MARK: Bindings
-
+  
   private func setupBindings() {
     viewModel.state.bind(on: .main) { [weak self] state in
       guard let self = self else { return }
@@ -70,14 +71,13 @@ final class DashboardViewController: UIViewController {
         self.present(errorAlert, animated: true)
       case .loading(let creditScore):
         self.creditScoreView.update(
-        title: creditScore.title,
-        value: creditScore.score,
-        goal: creditScore.goal,
-        subtitle: creditScore.subtitle,
-        duration: 1)
+          title: creditScore.title,
+          value: creditScore.score,
+          goal: creditScore.goal,
+          subtitle: creditScore.subtitle,
+          duration: 1)
       }
     }
-    viewModel.start()
   }
   
   // MARK: Alert

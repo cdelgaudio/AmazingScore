@@ -10,6 +10,8 @@ import Foundation
 
 final class DashboardViewModel {
   
+  // MARK: Type
+  
   struct CreditScorePresenter {
     let title: String
     let score: Double
@@ -35,15 +37,21 @@ final class DashboardViewModel {
     case failed, loading(CreditScorePresenter), loaded(CreditScorePresenter)
   }
   
+  // MARK: Parameters
+  
   let state: Binder<State>
   
   private let network: Networking
   
+  // MARK: Init
+
   init(network: Networking) {
     self.network = network
     state = Binder(value: .failed)
   }
   
+  // MARK: Methods
+
   func start() {
     state.value = .loading(.init())
     network.getAccount { [weak self] result in
