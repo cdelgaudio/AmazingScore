@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DB3B49CD2417EBE200A0D2DD /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B49CC2417EBE200A0D2DD /* NetworkRequest.swift */; };
+		DB3B49D02417F8B100A0D2DD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B49CF2417F8B100A0D2DD /* UIViewExtension.swift */; };
+		DB3B49D32417F97600A0D2DD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B49D22417F97600A0D2DD /* CircularProgressView.swift */; };
+		DB4BE8AC241802E000FCB26F /* CrediScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AB241802E000FCB26F /* CrediScoreView.swift */; };
+		DB4BE8AE241813E500FCB26F /* AnimatedCounterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AD241813E500FCB26F /* AnimatedCounterLabel.swift */; };
+		DB4BE8B02418FBB400FCB26F /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */; };
+		DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */; };
 		DBE364502417B75700F02B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3644F2417B75700F02B1A /* AppDelegate.swift */; };
 		DBE364522417B75700F02B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364512417B75700F02B1A /* SceneDelegate.swift */; };
 		DBE364542417B75700F02B1A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364532417B75700F02B1A /* DashboardViewController.swift */; };
@@ -42,6 +48,12 @@
 
 /* Begin PBXFileReference section */
 		DB3B49CC2417EBE200A0D2DD /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		DB3B49CF2417F8B100A0D2DD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		DB3B49D22417F97600A0D2DD /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		DB4BE8AB241802E000FCB26F /* CrediScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrediScoreView.swift; sourceTree = "<group>"; };
+		DB4BE8AD241813E500FCB26F /* AnimatedCounterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCounterLabel.swift; sourceTree = "<group>"; };
+		DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		DBE3644C2417B75700F02B1A /* AmazingScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE3644F2417B75700F02B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE364512417B75700F02B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +100,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB3B49CE2417F89A00A0D2DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB3B49CF2417F8B100A0D2DD /* UIViewExtension.swift */,
+				DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */,
+				DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DB3B49D12417F91900A0D2DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB4BE8AB241802E000FCB26F /* CrediScoreView.swift */,
+				DB3B49D22417F97600A0D2DD /* CircularProgressView.swift */,
+				DB4BE8AD241813E500FCB26F /* AnimatedCounterLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DBE364432417B75700F02B1A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +172,7 @@
 		DBE3647F2417C19B00F02B1A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DB3B49CE2417F89A00A0D2DD /* Extensions */,
 				DBE364802417C1BA00F02B1A /* Coordinator.swift */,
 				DBE3648B2417CBBC00F02B1A /* Binder.swift */,
 			);
@@ -164,6 +197,7 @@
 				DBE364842417C7D600F02B1A /* DashboardCoordinator.swift */,
 				DBE364862417C7E900F02B1A /* DashboardViewModel.swift */,
 				DBE364532417B75700F02B1A /* DashboardViewController.swift */,
+				DB3B49D12417F91900A0D2DD /* Views */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -317,12 +351,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE364812417C1BA00F02B1A /* Coordinator.swift in Sources */,
+				DB4BE8AC241802E000FCB26F /* CrediScoreView.swift in Sources */,
+				DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */,
 				DB3B49CD2417EBE200A0D2DD /* NetworkRequest.swift in Sources */,
+				DB3B49D02417F8B100A0D2DD /* UIViewExtension.swift in Sources */,
+				DB4BE8AE241813E500FCB26F /* AnimatedCounterLabel.swift in Sources */,
 				DBE3648C2417CBBC00F02B1A /* Binder.swift in Sources */,
 				DBE364852417C7D600F02B1A /* DashboardCoordinator.swift in Sources */,
 				DBE364542417B75700F02B1A /* DashboardViewController.swift in Sources */,
 				DBE3648F2417DC5100F02B1A /* NetworkManager.swift in Sources */,
+				DB3B49D32417F97600A0D2DD /* CircularProgressView.swift in Sources */,
 				DBE364872417C7E900F02B1A /* DashboardViewModel.swift in Sources */,
+				DB4BE8B02418FBB400FCB26F /* UILabelExtension.swift in Sources */,
 				DBE364502417B75700F02B1A /* AppDelegate.swift in Sources */,
 				DBE364912417DE3100F02B1A /* AccountResponse.swift in Sources */,
 				DBE364522417B75700F02B1A /* SceneDelegate.swift in Sources */,

@@ -11,6 +11,8 @@ import Foundation
 // I create this simple class to connect the viewModel with the view without using an external library like RX
 // Obviously it is just for demo purpose
 
+// A better solution could be to use Combine, but it works only on iOS 13
+
 final class Binder<T> {
   typealias Callback = ((T) -> Void)
   
