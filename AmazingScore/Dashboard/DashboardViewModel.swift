@@ -12,56 +12,47 @@ final class DashboardViewModel {
   
   // MARK: Type
   
-  struct CreditScorePresenter {
-    let title: String
+  struct CreditScoreModel {
     let score: Double
     let goal: Double
-    let subtitle: String
-    
-    init(account: AccountResponse) {
-      title = "Your credit score is"
-      score = Double(account.creditReportInfo.score)
-      goal = Double(account.creditReportInfo.maxScoreValue)
-      subtitle = "out of \(account.creditReportInfo.maxScoreValue)"
-    }
-    
-    init() {
-      title = "Loading"
-      score = 0
-      goal = 1
-      subtitle = "--"
-    }
   }
   
   enum State {
-    case failed, loading(CreditScorePresenter), loaded(CreditScorePresenter)
+    case failed, loading, loaded(CreditScoreModel)
   }
   
   // MARK: Parameters
   
-  let state: Binder<State>
+  let state: ImmutableBinder<State>
+  
+  private let _state: Binder<State>
   
   private let network: Networking
   
   // MARK: Init
-
+  
   init(network: Networking) {
     self.network = network
-    state = Binder(value: .failed)
+    _state = Binder(value: .failed)
+    state = ImmutableBinder(_state)
   }
   
   // MARK: Methods
-
+  
   func start() {
-    state.value = .loading(.init())
+    _state.value = .loading
     network.getAccount { [weak self] result in
       guard let self = self else { return }
       switch result {
       case .success(let response):
-        self.state.value = .loaded(.init(account: response))
+        let creditScore = CreditScoreModel(
+          score: Double(response.creditReportInfo.score),
+          goal: Double(response.creditReportInfo.maxScoreValue)
+        )
+        self._state.value = .loaded(creditScore)
       case .failure:
         // I'm not going to handle different kind of error for this demo
-        self.state.value = .failed
+        self._state.value = .failed
       }
     }
   }

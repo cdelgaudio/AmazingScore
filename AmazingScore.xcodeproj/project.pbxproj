@@ -15,6 +15,7 @@
 		DB4BE8B02418FBB400FCB26F /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */; };
 		DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */; };
 		DB4BE8B52419086E00FCB26F /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BE8B42419086E00FCB26F /* MockNetwork.swift */; };
+		DBE1555B241A60AD00BE296D /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1555A241A60AD00BE296D /* DashboardPresenter.swift */; };
 		DBE364502417B75700F02B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3644F2417B75700F02B1A /* AppDelegate.swift */; };
 		DBE364522417B75700F02B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364512417B75700F02B1A /* SceneDelegate.swift */; };
 		DBE364542417B75700F02B1A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE364532417B75700F02B1A /* DashboardViewController.swift */; };
@@ -56,6 +57,7 @@
 		DB4BE8AF2418FBB400FCB26F /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		DB4BE8B12418FD5000FCB26F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		DB4BE8B42419086E00FCB26F /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
+		DBE1555A241A60AD00BE296D /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		DBE3644C2417B75700F02B1A /* AmazingScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE3644F2417B75700F02B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE364512417B75700F02B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				DBE364842417C7D600F02B1A /* DashboardCoordinator.swift */,
 				DBE364862417C7E900F02B1A /* DashboardViewModel.swift */,
+				DBE1555A241A60AD00BE296D /* DashboardPresenter.swift */,
 				DBE364532417B75700F02B1A /* DashboardViewController.swift */,
 				DB3B49D12417F91900A0D2DD /* Views */,
 			);
@@ -366,6 +369,7 @@
 				DB4BE8AC241802E000FCB26F /* CrediScoreView.swift in Sources */,
 				DB4BE8B22418FD5000FCB26F /* UIFontExtension.swift in Sources */,
 				DB3B49CD2417EBE200A0D2DD /* NetworkRequest.swift in Sources */,
+				DBE1555B241A60AD00BE296D /* DashboardPresenter.swift in Sources */,
 				DB3B49D02417F8B100A0D2DD /* UIViewExtension.swift in Sources */,
 				DB4BE8AE241813E500FCB26F /* AnimatedCounterLabel.swift in Sources */,
 				DBE3648C2417CBBC00F02B1A /* Binder.swift in Sources */,

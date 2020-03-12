@@ -10,6 +10,15 @@ import UIKit
 
 final class CreditScoreView: UIView {
   
+  // MARK: Types
+  
+  struct ViewState {
+    let title: String
+    let score: Double
+    let progress: Double
+    let subtitle: String
+  }
+  
   // MARK: Parameters
 
   private let color: UIColor = .red
@@ -74,15 +83,24 @@ final class CreditScoreView: UIView {
   
   // MARK: Methods
   
-  func update(
+  func update(viewState: ViewState, duration: TimeInterval) {
+    update(
+      title: viewState.title,
+      value: viewState.score,
+      progress: viewState.progress,
+      subtitle: viewState.subtitle,
+      duration: duration
+    )
+  }
+  
+  private func update(
     title: String,
     value: Double,
-    goal: Double,
+    progress: Double,
     subtitle: String,
     duration: TimeInterval
   ) {
-    guard goal != 0 else { return }
-    circularProgressView.setProgress(value: value / goal, duration: duration)
+    circularProgressView.setProgress(value: progress, duration: duration)
     titleLabel.text = title
     subtitleLabel.text = subtitle
     scoreLabel.count(to: value, duration: duration)

@@ -26,8 +26,8 @@ class DashboardTests: XCTestCase {
     let viewModel = DashboardViewModel(network: MockNetwork(.loading))
     viewModel.start()
     switch viewModel.state.value {
-    case .loading(let state):
-      XCTAssert(state.title == "Loading")
+    case .loading:
+      XCTAssert(true)
     default:
       XCTAssert(false)
     }

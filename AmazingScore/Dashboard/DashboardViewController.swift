@@ -10,9 +10,19 @@ import UIKit
 
 final class DashboardViewController: UIViewController {
   
+  // MARK: Types
+  
+  enum ViewState {
+    case failed(errorMessage: String)
+    case loading(scoreState: CreditScoreView.ViewState)
+    case loaded(scoreState: CreditScoreView.ViewState)
+  }
+  
   // MARK: Parameters
   
   private let viewModel: DashboardViewModel
+  
+  private let presenter: DashboardPresenter
   
   // MARK: Views
   
@@ -20,8 +30,9 @@ final class DashboardViewController: UIViewController {
   
   // MARK: Init
   
-  init(viewModel: DashboardViewModel) {
+  init(viewModel: DashboardViewModel, presenter: DashboardPresenter) {
     self.viewModel = viewModel
+    self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -56,27 +67,19 @@ final class DashboardViewController: UIViewController {
   private func setupBindings() {
     viewModel.state.bind(on: .main) { [weak self] state in
       guard let self = self else { return }
+      let viewState = self.presenter.format(state: state)
       self.creditScoreView.isHidden = false
-      switch state {
-      case .loaded(let creditScore):
-        self.creditScoreView.update(
-          title: creditScore.title,
-          value: creditScore.score,
-          goal: creditScore.goal,
-          subtitle: creditScore.subtitle,
-          duration: 1)
-      case .failed:
+      switch viewState {
+      case .failed(let errorMessage):
         self.creditScoreView.isHidden = true
-        let errorAlert = self.makeErrorAlert(message: "generic error")
+        let errorAlert = self.makeErrorAlert(message: errorMessage)
         self.present(errorAlert, animated: true)
-      case .loading(let creditScore):
-        self.creditScoreView.update(
-          title: creditScore.title,
-          value: creditScore.score,
-          goal: creditScore.goal,
-          subtitle: creditScore.subtitle,
-          duration: 1)
+      case .loading(let scoreState):
+        self.creditScoreView.update(viewState: scoreState, duration: 1)
+      case .loaded(let scoreState):
+        self.creditScoreView.update(viewState: scoreState, duration: 1)
       }
+
     }
   }
   
