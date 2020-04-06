@@ -25,14 +25,14 @@ enum NetworkError: Error {
 // MARK: - NetworkManager
 
 // I used the singleton pattern to easily inject it
-final class NetworkManager {
+final class SessionManager {
   
-  static let shared = NetworkManager()
+  static let shared = SessionManager()
   
   private let session: URLSession
   
-  private init() {
-    session = .shared
+  private init(session: URLSession = URLSession(configuration: .default)) {
+    self.session = session
   }
   
   @discardableResult
@@ -53,7 +53,7 @@ final class NetworkManager {
 
 // MARK: Networking
 
-extension NetworkManager: Networking {
+extension SessionManager: Networking {
   func getAccount(completion: @escaping (NetworkResult<AccountResponse>) -> Void) {
     get(url: NetworkRequest.account.url, completion: completion)
   }

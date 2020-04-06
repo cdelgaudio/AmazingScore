@@ -18,11 +18,14 @@ final class DashboardCoordinator: Coordinator {
   }
   
   func start() {
-    let viewModel = DashboardViewModel(network: NetworkManager.shared)
-    let presenter = DashboardPresenter()
+    let viewState: Binder<DashboardViewState> = Binder(
+      value: .failed(errorMessage: "Generic Error")
+    )
+    let viewModel = DashboardViewModel(network: SessionManager.shared, viewState: viewState)
+    
     let controller = DashboardViewController(
       viewModel: viewModel,
-      presenter: presenter
+      viewState: ImmutableBinder(viewState)
     )
     
     navigation.pushViewController(controller, animated: true)

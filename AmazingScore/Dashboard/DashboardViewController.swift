@@ -8,21 +8,19 @@
 
 import UIKit
 
+enum DashboardViewState {
+  case failed(errorMessage: String)
+  case loading(scoreState: CreditScoreView.ViewState)
+  case loaded(scoreState: CreditScoreView.ViewState)
+}
+
 final class DashboardViewController: UIViewController {
-  
-  // MARK: Types
-  
-  enum ViewState {
-    case failed(errorMessage: String)
-    case loading(scoreState: CreditScoreView.ViewState)
-    case loaded(scoreState: CreditScoreView.ViewState)
-  }
   
   // MARK: Parameters
   
   private let viewModel: DashboardViewModel
   
-  private let presenter: DashboardPresenter
+  private let viewState: ImmutableBinder<DashboardViewState>
   
   // MARK: Views
   
@@ -30,9 +28,9 @@ final class DashboardViewController: UIViewController {
   
   // MARK: Init
   
-  init(viewModel: DashboardViewModel, presenter: DashboardPresenter) {
+  init(viewModel: DashboardViewModel, viewState: ImmutableBinder<DashboardViewState>) {
     self.viewModel = viewModel
-    self.presenter = presenter
+    self.viewState = viewState
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -65,11 +63,10 @@ final class DashboardViewController: UIViewController {
   // MARK: Bindings
   
   private func setupBindings() {
-    viewModel.state.bind(on: .main) { [weak self] state in
+    viewState.bind(on: .main) { [weak self] state in
       guard let self = self else { return }
-      let viewState = self.presenter.format(state: state)
       self.creditScoreView.isHidden = false
-      switch viewState {
+      switch state {
       case .failed(let errorMessage):
         self.creditScoreView.isHidden = true
         let errorAlert = self.makeErrorAlert(message: errorMessage)

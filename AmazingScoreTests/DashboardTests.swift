@@ -12,9 +12,10 @@ import XCTest
 class DashboardTests: XCTestCase {
   
   func testFailure() {
-    let viewModel = DashboardViewModel(network: MockNetwork(.failure))
+    let viewState = Binder<DashboardViewState>(value: .failed(errorMessage: ""))
+    let viewModel = DashboardViewModel(network: MockNetwork(.failure), viewState: viewState)
     viewModel.start()
-    switch viewModel.state.value {
+    switch viewState.value {
     case .failed:
       XCTAssert(true)
     default:
@@ -23,9 +24,10 @@ class DashboardTests: XCTestCase {
   }
   
   func testLoading() {
-    let viewModel = DashboardViewModel(network: MockNetwork(.loading))
+    let viewState = Binder<DashboardViewState>(value: .failed(errorMessage: ""))
+    let viewModel = DashboardViewModel(network: MockNetwork(.loading), viewState: viewState)
     viewModel.start()
-    switch viewModel.state.value {
+    switch viewState.value {
     case .loading:
       XCTAssert(true)
     default:
@@ -34,9 +36,10 @@ class DashboardTests: XCTestCase {
   }
   
   func testLoaded() {
-    let viewModel = DashboardViewModel(network: MockNetwork(.loaded(.mock)))
+    let viewState = Binder<DashboardViewState>(value: .failed(errorMessage: ""))
+    let viewModel = DashboardViewModel(network: MockNetwork(.loaded(.mock)), viewState: viewState)
     viewModel.start()
-    switch viewModel.state.value {
+    switch viewState.value {
     case .loaded(let state):
       XCTAssert(state.score == 514)
     default:
